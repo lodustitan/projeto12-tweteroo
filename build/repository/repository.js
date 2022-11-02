@@ -11,8 +11,17 @@ class Repository {
     getUsers() {
         return userList;
     }
+    getAvatarByUsername(username) {
+        for (let el of userList) {
+            if (el.username === username) {
+                return el.avatar;
+            }
+        }
+        return "";
+    }
     addTweet(username, tweet) {
-        const data = { username, tweet };
+        const userAvatar = this.getAvatarByUsername(username);
+        const data = { username, tweet, avatar: userAvatar };
         tweetList.push(data);
     }
     removeTweetByUsername(username) {
@@ -20,6 +29,9 @@ class Repository {
     }
     getTweetsByUsername(username) {
         return tweetList.filter((each) => username === each.username);
+    }
+    getTweets() {
+        return tweetList;
     }
 }
 exports.repository = new Repository();

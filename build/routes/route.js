@@ -15,4 +15,5 @@ app.use(body_parser_1.default.urlencoded({ extended: false }));
 app.use(body_parser_1.default.json());
 app.post("/sign-up", controllers_1.signUp);
 app.post("/tweets", controllers_1.postTweets);
-app.get("tweets:id", controllers_1.getTweets);
+app.get("/tweets/", controllers_1.getTweets);
+app.get("/tweets/:username", controllers_1.getTweets);

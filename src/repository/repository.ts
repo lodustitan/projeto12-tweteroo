@@ -11,8 +11,17 @@ class Repository implements IRepository {
     getUsers(){
         return userList;
     }
+    getAvatarByUsername(username: string): string{
+        for(let el of userList){
+            if(el.username === username){
+                return el.avatar;
+            }
+        }
+        return "";
+    }
     addTweet(username: string, tweet: string): void {
-        const data: ITweet = { username, tweet };
+        const userAvatar: string = this.getAvatarByUsername(username); 
+        const data: ITweet = { username, tweet, avatar: userAvatar };
         tweetList.push(data);
     }
     removeTweetByUsername(username: string): void {
@@ -20,6 +29,9 @@ class Repository implements IRepository {
     }
     getTweetsByUsername(username: string): ITweet[] {
         return tweetList.filter((each)=> username === each.username );
+    }
+    getTweets(): ITweet[] {
+        return tweetList;
     }
 }
 

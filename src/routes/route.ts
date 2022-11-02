@@ -13,7 +13,7 @@ app.use(bodyParser.json())
 
 app.post("/sign-up", signUp);
 app.post("/tweets", postTweets);
-app.get("tweets:id", getTweets);
-// app.get("/tweets/", getTweets);
+app.get("/tweets/", getTweets);
+app.get("/tweets/:username", getTweets);
 
 export { app };

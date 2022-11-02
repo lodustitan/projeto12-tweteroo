@@ -3,9 +3,8 @@ export interface IUser{
     avatar: string
 }
 
-export interface ITweet{
-    username: string,
-    tweet: string
+export interface ITweet extends IUser{
+    tweet: string,
 }
 
 export interface IRepository {
@@ -15,4 +14,10 @@ export interface IRepository {
     addTweet(username: string, tweet: string): void,
     removeTweetByUsername(username: string): void,
     getTweetsByUsername(username: string): ITweet[]
+    getTweets(): ITweet[]
+}
+
+export interface IService {
+    getLastTweets(username: string, startIndex: number, count: number): ITweet[],
+    getLastTweetsByUsername(startIndex: number, count: number): ITweet[]
 }
