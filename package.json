@@ -1,0 +1,11 @@
+{
+  "name": "tweteroo",
+  "version": "1.0.0",
+  "description": "server app do tweteroo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Felipe Alberto",
+  "license": "ISC"
+}
