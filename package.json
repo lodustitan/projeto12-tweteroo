@@ -4,7 +4,7 @@
   "description": "server app do tweteroo",
   "main": "index.js",
   "scripts": {
-    "start": "node build/app.js"
+    "start": "nodemon build/app.js"
   },
   "author": "Felipe Alberto",
   "license": "ISC",

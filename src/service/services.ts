@@ -3,8 +3,8 @@ import { repository } from "../repository/repository";
 
 
 class Service implements IService {
-    getLastTweets(username: string, startIndex: number, count: number): ITweet[]{
-        const all: ITweet[] = repository.getTweetsByUsername(username);
+    getLastTweets(startIndex: number, count: number): ITweet[]{
+        const all: ITweet[] = repository.getTweets();
         const lasts: ITweet[] = [];
 
         for(let [index, el] of all.entries()){
@@ -15,8 +15,8 @@ class Service implements IService {
 
         return lasts;
     }
-    getLastTweetsByUsername(startIndex: number, count: number): ITweet[]{
-        const all: ITweet[] = repository.getTweets();
+    getLastTweetsByUsername(username: string, startIndex: number, count: number): ITweet[]{
+        const all: ITweet[] = repository.getTweetsByUsername(username);
         const lasts: ITweet[] = [];
 
         for(let [index, el] of all.entries()){

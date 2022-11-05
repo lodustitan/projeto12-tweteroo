@@ -18,6 +18,6 @@ export interface IRepository {
 }
 
 export interface IService {
-    getLastTweets(username: string, startIndex: number, count: number): ITweet[],
-    getLastTweetsByUsername(startIndex: number, count: number): ITweet[]
+    getLastTweets(startIndex: number, count: number): ITweet[],
+    getLastTweetsByUsername(username: string, startIndex: number, count: number): ITweet[]
 }
